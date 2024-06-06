@@ -3,8 +3,9 @@ const users = [
 ];
 
 const students = [
-    { name: 'John Doe', email: 'john@example.com', age: 20, major: 'Computer Science' },
-    { name: 'Jane Smith', email: 'jane@example.com', age: 21, major: 'Mathematics' },
+    { name: 'A', email: 'A@example.com', age: 20, major: 'Computer Science' },
+    { name: 'B', email: 'B@example.com', age: 21, major: 'Mathematics' },
+    { name: 'C', email: 'C@example.com', age: 21, major: 'Mathematics' },
     // Add more student objects as needed
 ];
 
