@@ -1,5 +1,6 @@
+// Lưu trữ mật khẩu dưới dạng hàm băm
 const users = [
-    { username: 'admin', password: 'admin' }
+    { username: 'admin', password: CryptoJS.SHA256('admin').toString() }
 ];
 
 const students = [
@@ -14,7 +15,11 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     const username = e.target.username.value;
     const password = e.target.password.value;
 
-    const user = users.find(user => user.username === username && user.password === password);
+    // Băm mật khẩu nhập vào
+    const hashedPassword = CryptoJS.SHA256(password).toString();
+
+    // Kiểm tra tên người dùng và mật khẩu đã băm
+    const user = users.find(user => user.username === username && user.password === hashedPassword);
     if (user) {
         document.getElementById('login').style.display = 'none';
         document.getElementById('students').style.display = 'block';
